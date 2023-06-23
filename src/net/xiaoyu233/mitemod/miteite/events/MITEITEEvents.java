@@ -379,6 +379,12 @@ public class MITEITEEvents {
             MITEITEMod.checkUpdateVer(player);
             event.setExecuteSuccess(true);
         }
+        if (par2Str.startsWith("damage")) {
+            String damage = par2Str.substring(7);
+            player.getHeldItemStack().setItemDamage(Integer.parseInt(damage));
+            player.addChatMessage("手持物品减少的耐久：" + damage);
+            event.setExecuteSuccess(true);
+        }
 
     }
 

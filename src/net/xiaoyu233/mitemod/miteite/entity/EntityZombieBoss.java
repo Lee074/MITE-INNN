@@ -36,22 +36,22 @@ public class EntityZombieBoss extends EntityZombie {
     protected void dropFewItems(boolean recently_hit_by_player, DamageSource damage_source) {
         if (recently_hit_by_player){
             this.broadcastDamage("僵尸BOSS挑战成功");
-                MinecraftServer server = MinecraftServer.F();
-                Iterator var4 = server.getConfigurationManager().playerEntityList.iterator();
-
-                while (var4.hasNext()) {
-                    Object o = var4.next();
-                    EntityPlayer player = (EntityPlayer)o;
-                    if(attackDamageMap.containsKey(player.getEntityName())) {
-                        float damage = attackDamageMap.get(player.getEntityName());
-                        int nums = Math.round(damage) / 10;
-                        if(nums > 0) {
-                            player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Item.diamond, nums));
-                        }
+            MinecraftServer server = MinecraftServer.F();
+            Iterator var4 = server.getConfigurationManager().playerEntityList.iterator();
+            Object o = var4.next();
+            EntityPlayer player = (EntityPlayer)o;
+            player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Items.voucherZombieBoss, 1));
+            while (var4.hasNext()) {
+                if(attackDamageMap.containsKey(player.getEntityName())) {
+                    float damage = attackDamageMap.get(player.getEntityName());
+                    int nums = Math.round(damage) / 10;
+                    if(nums > 0) {
+                        player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Item.diamond, nums));
                     }
                 }
             }
         }
+    }
 
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();

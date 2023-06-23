@@ -6,9 +6,9 @@ import net.minecraft.MaterialMapColor;
 import net.minecraft.Minecraft;
 
 public class Materials extends Material {
-    public static final Materials vibranium = (Materials) new Materials(EnumEquipmentMaterials.vibranium).setMetal(false).setHarmedByLava(false).setMinHarvestLevel(6);
-    public static final Materials infinity = (Materials) new Materials(EnumEquipmentMaterials.infinity).setMetal(false).setHarmedByLava(false).setMinHarvestLevel(114514);
-    public static final Materials enchant = (Materials) new Materials(EnumEquipmentMaterials.enchant).setMetal(false).setHarmedByLava(false).setMinHarvestLevel(6);
+    public static final Material vibranium = new Materials(EnumEquipmentMaterials.vibranium).setMetal(false).setHarmedByLava(false).setMinHarvestLevel(6);
+    public static final Material infinity = new Materials(EnumEquipmentMaterials.infinity).setMetal(false).setHarmedByLava(false).setMinHarvestLevel(114514);
+    public static final Material enchant = new Materials(EnumEquipmentMaterials.enchant).setMetal(false).setHarmedByLava(false).setMinHarvestLevel(6);
     public Materials(EnumEquipmentMaterial enum_crafting_material) {
         super(enum_crafting_material);
     }

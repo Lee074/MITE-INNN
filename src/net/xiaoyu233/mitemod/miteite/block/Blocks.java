@@ -16,13 +16,12 @@ import static net.xiaoyu233.mitemod.miteite.item.Items.VIBRANIUM_INGOT;
 public class Blocks extends Block{
     public static final Block blockForgingTable = new BlockForgingTable(getNextBlockID())
             .setBlockHardness(8.0F).setExplosionResistance(0.875f).setStepSound_(Block.soundStoneFootstep);
-
     public static final BlockAnvil anvilVibranium = ReflectHelper.createInstance(BlockAnvil.class, new Class[]{int.class, Material.class}, getNextBlockID(), Materials.vibranium);
     public static final BlockOreBlock blockVibranium = new BlockOreBlock(getNextBlockID(),Materials.vibranium);
     public static final Block furnaceVibraniumBurning = new BlockFurnaceVibranium(getNextBlockID(), true)
             .setBlockHardness(8.0F)
             .setExplosionResistance(0.875f).setStepSound_(Block.soundStoneFootstep);
-    public static final Block furnaceVibraniumIdle = new BlockFurnaceVibranium(getNextBlockID(),false).setCreativeTab(CreativeModeTab.tabDecorations)
+    public static final Block furnaceVibraniumIdle = new BlockFurnaceVibranium(getNextBlockID(), false).setCreativeTab(CreativeModeTab.tabDecorations)
             .setBlockHardness(8.0F).setExplosionResistance(0.875f).setStepSound_(Block.soundStoneFootstep);
     public static final Block netherAdamantiumOre = new BlockNetherAdamantiumOre(getNextBlockID())
             .setCreativeTab(CreativeModeTab.tabBlock)
@@ -31,9 +30,7 @@ public class Blocks extends Block{
             .setUnlocalizedName("oreNetherAdamantium");
     public static final Block chestVibranium = (ReflectHelper.createInstance(BlockStrongbox.class,new Class[] {int.class,Material.class},getNextBlockID(), Materials.vibranium))
             .setStepSound_(soundMetalFootstep);
-
     public static final BlockGotcha blockGotcha = (new BlockGotcha(getNextBlockID(), Material.glass, false)).setCraftingDifficultyAsComponent(1.0E-11F);
-
     public static final Block blockColorful = (ReflectHelper.createInstance(BlockColorful.class, new Class[] {int.class,Material.class}, getNextBlockID(), Materials.stone)).setUnlocalizedName("blockColorful");
     public static final Block blockColorfulBrick = (ReflectHelper.createInstance(BlockColorfulBrick.class, new Class[] {int.class,Material.class}, getNextBlockID(), Materials.stone)).setUnlocalizedName("blockColorfulBrick");
     public static final Block blockLantern = (ReflectHelper.createInstance(BlockLantern.class, new Class[] {int.class,Material.class}, 174, Materials.circuits)).setHardness(0.0F).setStepSound_(soundPowderFootstep).setUnlocalizedName("blockLantern");
@@ -67,7 +64,6 @@ public class Blocks extends Block{
 //    public static final Block volcanoDiamondOre = new BlockOre(191, Material.diamond, 3).setBlockHardness(4.0F);
 
     public static final Block fancyRed = (new BlockFancyRed(194, Material.diamond, 4)).setCreativeTab(CreativeModeTab.tabBlock);
-
     public static final Block gemSetting = (new BlockGemSetting(195, Material.stone, (new BlockConstants()).setNeverHidesAdjacentFaces())).setUnlocalizedName("gem_setting").setCreativeTab(CreativeModeTab.tabDecorations);
 
 
@@ -106,11 +102,6 @@ public class Blocks extends Block{
     }
     public static int getNextBlockID() {
         return Constant.nextBlockID++;
-    }
-
-    private static void registerBlock(Block block,String resourceLocation){
-        block.setUnlocalizedName(resourceLocation);
-        block.setResourceLocation(resourceLocation);
     }
 
     public static void registerBlocks(){

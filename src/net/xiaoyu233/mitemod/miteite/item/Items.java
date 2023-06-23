@@ -94,6 +94,20 @@ public class Items extends Item{
     public static ItemEnhanceGem itemEnhanceGem6 = (ItemEnhanceGem)(new ItemEnhanceGem(Constant.getNextItemID(), 6)).setUnlocalizedName("enhance_gem_phase6");
     public static ItemEnhanceGemBox itemEnhanceGemBox = (ItemEnhanceGemBox)(new ItemEnhanceGemBox(Constant.getNextItemID())).setUnlocalizedName("enhance_gem_box_phase1");
     public static ItemGemShard itemGemShard = (ItemGemShard)(new ItemGemShard(Constant.getNextItemID())).setUnlocalizedName("gem_shard");public static final Item fancyRed = (new ItemFancyRed(Constant.getNextItemID(), Material.diamond, "fancy_red"));
+    public static final Item furnaceClay = new ItemFurnace(Block.furnaceClayIdle, Materials.clay);
+    public static final Item furnaceClayBurning = new ItemFurnace(Block.furnaceClayBurning, Materials.clay);
+    public static final Item furnaceCobblestone = new ItemFurnace(Block.furnaceIdle, Materials.stone);
+    public static final Item furnaceCobblestoneBurning = new ItemFurnace(Block.furnaceBurning, Materials.stone);
+    public static final Item furnaceHardenedClay = new ItemFurnace(Block.furnaceHardenedClayIdle, Materials.hardened_clay);
+    public static final Item furnaceHardenedClayBurning = new ItemFurnace(Block.furnaceHardenedClayBurning, Materials.hardened_clay);
+    public static final Item furnaceNetherrack = new ItemFurnace(Block.furnaceNetherrackIdle, Materials.netherrack);
+    public static final Item furnaceNetherrackBurning = new ItemFurnace(Block.furnaceNetherrackBurning, Materials.netherrack);
+    public static final Item furnaceObsidian = new ItemFurnace(Block.furnaceObsidianIdle, Materials.obsidian);
+    public static final Item furnaceObsidianBurning = new ItemFurnace(Block.furnaceObsidianBurning, Materials.obsidian);
+    public static final Item furnaceSandstone = new ItemFurnace(Block.furnaceSandstoneIdle, Materials.sand);
+    public static final Item furnaceSandstoneBurning = new ItemFurnace(Block.furnaceSandstoneBurning, Materials.sand);
+    public static final Item furnaceVibranium = new ItemFurnace(Blocks.furnaceVibraniumIdle, Materials.vibranium);
+    public static final Item furnaceVibraniumBurning = new ItemFurnace(Blocks.furnaceVibraniumBurning, Materials.vibranium);
 
 
     private static Item register(String resourceLocation, Item item, CreativeModeTab tab) {
@@ -251,7 +265,6 @@ public class Items extends Item{
         register("enchant_pickaxe", enchantPickaxe);
         register("enchant_src", enchantSRC, CreativeModeTab.tabMaterials);
 
-
         register("dynamic_core/dynamic_core_1", itemDynamicCoreIron).setUnlocalizedName("dynamic_core_iron").setLowestCraftingDifficultyToProduce(1.0F);
         register("dynamic_core/dynamic_core_2", itemDynamicCoreAncient_metal).setUnlocalizedName("dynamic_core_ancient_metal").setLowestCraftingDifficultyToProduce(1.0F);
         register("dynamic_core/dynamic_core_3", itemDynamicCoreMithril).setUnlocalizedName("dynamic_core_mithril").setLowestCraftingDifficultyToProduce(1.0F);
@@ -264,10 +277,22 @@ public class Items extends Item{
         register("gem/enhance_gem_phase3", itemEnhanceGem3).setUnlocalizedName("enhance_gem_phase3").setLowestCraftingDifficultyToProduce(1.0F);
         register("gem/enhance_gem_phase4", itemEnhanceGem4).setUnlocalizedName("enhance_gem_phase4").setLowestCraftingDifficultyToProduce(1.0F);
         register("gem/enhance_gem_phase5", itemEnhanceGem5).setUnlocalizedName("enhance_gem_phase5").setLowestCraftingDifficultyToProduce(1.0F);
-        register("gem/enhance_gem_phase5", itemEnhanceGem6).setUnlocalizedName("enhance_gem_phase6").setLowestCraftingDifficultyToProduce(1.0F);
+        register("gem/enhance_gem_phase5", itemEnhanceGem6).setUnlocalizedName("enhance_gem_phase6").setLowestCraftingDifficultyToProduce(1.0F);;
 
-        //register("china_fu", chinaFu);
-        //register("padding", itemPadding);
+        register("furnace_clay", furnaceClay);
+        register("furnace_clay_burning", furnaceClayBurning);
+        register("furnace_stone", furnaceCobblestone);
+        register("furnace_stone_burning", furnaceCobblestoneBurning);
+        register("furnace_hclay", furnaceHardenedClay);
+        register("furnace_hclay", furnaceHardenedClayBurning);
+        register("furnace_netherrack", furnaceNetherrack);
+        register("furnace_netherrack_burning", furnaceNetherrackBurning);
+        register("furnace_Obsidian", furnaceObsidian);
+        register("furnace_Obsidian_burning", furnaceObsidianBurning);
+        register("furnace_sand_stone", furnaceSandstone);
+        register("furnace_sand_stone_burning", furnaceSandstoneBurning);
+        register("furnace_vibranium", furnaceVibranium);
+        register("furnace_vibranium_burning", furnaceVibraniumBurning);
 
         Constant.initItemArray();
     }

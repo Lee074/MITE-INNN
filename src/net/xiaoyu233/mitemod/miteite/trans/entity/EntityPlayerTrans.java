@@ -1019,7 +1019,6 @@ public abstract class EntityPlayerTrans extends EntityLiving implements ICommand
 
       // 服务端
       if (!this.worldObj.isRemote) {
-
          if(this.isAttackByBossCounter > 0) {
             --this.isAttackByBossCounter;
          }
