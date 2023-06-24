@@ -982,6 +982,7 @@ public abstract class EntityPlayerTrans extends EntityLiving implements ICommand
    }
    public void attackMonstersKiller(List <Entity>targets) {
       float damage = ((ItemRingKiller)itemRingKiller.getItem()).getRingKillerSkillDamage();
+      //System.out.println(damage);
       for(int i = 0; i< targets.size(); i++) {
          EntityMonster entityMonster = targets.get(i) instanceof EntityMonster ? (EntityMonster)targets.get(i) : null;
          if(entityMonster != null && (!EntityEnderman.class.isInstance(entityMonster) && !EntitySilverfish.class.isInstance(entityMonster) && !EntityZombieBoss.class.isInstance(entityMonster))) {
@@ -1033,6 +1034,7 @@ public abstract class EntityPlayerTrans extends EntityLiving implements ICommand
          } else {
             resetAttackMapTimer --;
          }
+
          this.itemRingKiller = this.inventory.getRingKiller();
          if(this.itemRingKiller != null) {
             float range = ((ItemRingKiller)this.itemRingKiller.getItem()).getRingKillerSkillRange();
@@ -1040,7 +1042,7 @@ public abstract class EntityPlayerTrans extends EntityLiving implements ICommand
             List <Entity>targets  = this.getNearbyEntities(range, range);
             if(targets.size() > 0) {
                if(this.surroundHurtCollDown == cooldownTime) {
-                  this.attackMonsters(targets);
+                  this.attackMonstersKiller(targets);
                   --this.surroundHurtCollDown;
                } else {
                   --this.surroundHurtCollDown;

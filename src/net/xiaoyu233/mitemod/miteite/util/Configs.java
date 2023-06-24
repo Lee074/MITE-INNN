@@ -43,10 +43,11 @@ public class Configs {
 
     public static class wenscConfig {
         public static ConfigItem <Boolean> isSpawnSkeletonWithBat = new ConfigItem("isSpawnSkeletonWithBat", true, "生成骷髅时是否有概率乘坐蝙蝠");
+        public static ConfigItem <Boolean> hasBlockSpawnRecipe = new ConfigItem("hasBlockSpawnRecipe", true, "是否有复活传送阵配方");
+
+
         public static ConfigItem <Integer> fancyRedExp = new ConfigItem("fancyRedExp", 500, "红钻经验", 0 ,10000);
         public static ConfigItem <Integer> fancyRedFrequencyUnderworld = new ConfigItem("fancyRedFrequencyUnderworld", 3, "地底世界红钻矿生成频率", 0 ,100);
-
-
         public static ConfigItem <Boolean> BlnGravel = new ConfigItem("BlnGravel", true, "是否增加燧石概率");
         public static ConfigItem <Boolean> isOpenStrongBoxBreakRecord = new ConfigItem("isOpenStrongBoxBreakRecord", true, "是否开启私人箱子破坏记录");
         public static ConfigItem <Boolean> isRecipeGATorch = new ConfigItem("isRecipeGATorch", true, "是否有一捆火把配方");
@@ -186,6 +187,7 @@ public class Configs {
     }
 
     public static void loadConfigs(){
+        wenscMap.put("hasBlockSpawnRecipe", wenscConfig.hasBlockSpawnRecipe);
         wenscMap.put("isSpawnSkeletonWithBat", wenscConfig.isSpawnSkeletonWithBat);
         wenscMap.put("fancyRedFrequencyUnderworld", wenscConfig.fancyRedFrequencyUnderworld);
         wenscMap.put("fancyRedExp", wenscConfig.fancyRedExp);
@@ -324,7 +326,7 @@ public class Configs {
 
 //        wenscMap.put("md5", wenscConfig.md5String);
 
-        String filePth = "mite-extreme.cfg";
+        String filePth = "mite-innn.cfg";
         File file_mite = new File(filePth);
         if (file_mite.exists()) {
             Properties properties = new Properties();
@@ -352,13 +354,13 @@ public class Configs {
                 e.printStackTrace();
                 JFrame jFrame = new JFrame();
                 jFrame.setAlwaysOnTop(true);
-                JOptionPane.showMessageDialog(jFrame, "mite-extreme.cfg配置文件失败，请前往www.wensc.cn自行下载", "错误", 0);
+                JOptionPane.showMessageDialog(jFrame, "mite-innn.cfg配置文件失败", "错误", 0);
                 System.exit(0);
             }
         }
     }
     public static void beginToLoadShopConfig() {
-        String shopConfigFilePath = "mite-extreme-shop.cfg";
+        String shopConfigFilePath = "mite-innn-shop.cfg";
         File shopConfigFile = new File(shopConfigFilePath);
         if (shopConfigFile.exists()) {
             Properties properties = new Properties();
@@ -385,7 +387,7 @@ public class Configs {
                 e.printStackTrace();
                 JFrame jFrame = new JFrame();
                 jFrame.setAlwaysOnTop(true);
-                JOptionPane.showMessageDialog(jFrame, "mite-extreme-shop.cfg配置文件失败，请前往www.wensc.cn自行下载", "错误", 0);
+                JOptionPane.showMessageDialog(jFrame, "mite-innn-shop.cfg配置文件失败", "错误", 0);
                 System.exit(0);
             }
         }
@@ -489,7 +491,7 @@ public class Configs {
     public static void generateConfigFile(File file) {
         try{
             FileWriter fileWritter = new FileWriter(file.getName());
-            fileWritter.write("// MITE-Extreme配置文件，说明：【布尔类型：true为开启，false关闭】，在【名称=值】之间/之后不要存在空格或者其他无关字符，【tick：20tick=1秒】\n");
+            fileWritter.write("// MITE-INNN配置文件，说明：【布尔类型：true为开启，false关闭】，在【名称=值】之间/之后不要存在空格或者其他无关字符，【tick：20tick=1秒】\n");
             for (Map.Entry<String, ConfigItem> entry: wenscMap.entrySet()) {
                 ConfigItem value = entry.getValue();
                 fileWritter.write("// " + value.ConfigComment + "\n");
@@ -504,7 +506,7 @@ public class Configs {
     public static void generateShopConfigFile(File file) {
         try{
             FileWriter fileWritter = new FileWriter(file.getName());
-            fileWritter.write("// MITE-Extreme商店配置文件，说明：参数之间使用英文逗号分隔，请严格遵循格式（商品英文名=售出价格,购买价格），价格小于等于0代表不可出售或者不可购买，价格可以为小数，乱改造成无法启动概不负责\n");
+            fileWritter.write("// MITE-INNN商店配置文件，说明：参数之间使用英文逗号分隔，请严格遵循格式（商品英文名=售出价格,购买价格），价格小于等于0代表不可出售或者不可购买，价格可以为小数，乱改造成无法启动概不负责\n");
             for (Item item : Item.itemsList) {
                 if(item != null) {
                     if(item instanceof ItemBlock) {

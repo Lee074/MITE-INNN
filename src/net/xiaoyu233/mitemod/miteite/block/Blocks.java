@@ -1,9 +1,11 @@
 package net.xiaoyu233.mitemod.miteite.block;
 
 import net.minecraft.*;
+import net.xiaoyu233.mitemod.miteite.item.GemModifierTypes;
 import net.xiaoyu233.mitemod.miteite.item.Items;
 import net.xiaoyu233.mitemod.miteite.item.Materials;
 import net.xiaoyu233.mitemod.miteite.item.recipe.ForgingTableLevel;
+import net.xiaoyu233.mitemod.miteite.util.Configs;
 import net.xiaoyu233.mitemod.miteite.util.Constant;
 import net.xiaoyu233.mitemod.miteite.util.RecipeRegister;
 import net.xiaoyu233.mitemod.miteite.util.ReflectHelper;
@@ -202,13 +204,17 @@ public class Blocks extends Block{
                 "L L",
                 "LLL",
                 'L', Block.oreDiamond);
-        register.registerShapedRecipe(new ItemStack(blockSpawn), true,
-                "ABA",
-                "BCB",
-                "ABA",
-                'A', Blocks.obsidian,
-                'B', Items.diamond,
-                'C', Items.enderPearl);
+
+        if(Configs.wenscConfig.hasBlockSpawnRecipe.ConfigValue){
+            register.registerShapedRecipe(new ItemStack(blockSpawn), true,
+                    "ABA",
+                    "BCB",
+                    "ABA",
+                    'A', Blocks.obsidian,
+                    'B', Items.diamond,
+                    'C', Items.enderPearl);
+        }
+
         register.registerShapedRecipe(new ItemStack(anvilVibranium),true,
                 "AVA",
                 " I ",
@@ -252,6 +258,16 @@ public class Blocks extends Block{
 //                " II",
 //                " II",
 //                'I', VIBRANIUM_INGOT);
+        for(int i = 0; i < GemModifierTypes.values().length; i++) {
+            register.registerShapedRecipe(new ItemStack(Blocks.gemSetting,1, 0),false,
+                    "AAA",
+                    "BCB",
+                    "BBB",
+                    'A', Items.ingotIron,
+                    'B',Block.planks,
+                    'C',new ItemStack(Items.itemEnhanceGem, 1, i)
+            );
+        }
         registerForgingTableUpgradeRecipes(register,ForgingTableLevel.IRON,Item.ingotMithril);
         registerForgingTableUpgradeRecipes(register,ForgingTableLevel.MITHRIL,Item.ingotAdamantium);
         registerForgingTableUpgradeRecipes(register,ForgingTableLevel.ADAMANTIUM, VIBRANIUM_INGOT);

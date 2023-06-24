@@ -323,9 +323,9 @@ public class Items extends Item{
         register.registerShapelessRecipe(new ItemStack(Items.voucherClubCore, 1), true, Items.voucherFishing, Items.voucherVillager, Items.voucherPlanting);
 
         for(int i =0; i < GemModifierTypes.values().length; i++) {
-            register.registerShapedRecipe(new ItemStack(itemEnhanceGem2, 1, i), true, new Object[]{" # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 0), '*', new ItemStack(itemEnhanceGem, 1, i)});
+            register.registerShapedRecipe(new ItemStack(itemEnhanceGem2, 1, i), true, " # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 0), '*', new ItemStack(itemEnhanceGem, 1, i));
             register.registerShapedRecipe(new ItemStack(itemEnhanceGem3, 1, i), true, new Object[]{" # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 1), '*', new ItemStack(itemEnhanceGem2, 1, i)});
-            register.registerShapedRecipe(new ItemStack(itemEnhanceGem4, 1, i), true, new Object[]{" # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 2), '*', new ItemStack(itemEnhanceGem3, 1, i)});
+            register.registerShapedRecipe(new ItemStack(itemEnhanceGem4, 1, i), true, " # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 2), '*', new ItemStack(itemEnhanceGem3, 1, i));
             register.registerShapedRecipe(new ItemStack(itemEnhanceGem5, 1, i), true, new Object[]{" # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 3), '*', new ItemStack(itemEnhanceGem4, 1, i)});
             register.registerShapedRecipe(new ItemStack(itemEnhanceGem6, 1, i), true, new Object[]{" # ", "#*#"," # ", '#', new ItemStack(Items.itemGemShard, 1, 4), '*', new ItemStack(itemEnhanceGem5, 1, i)});
         }

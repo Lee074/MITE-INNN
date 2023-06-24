@@ -222,3 +222,7 @@ item.enchant_stick.name=附魔金属棒
 item.enchant_pickaxe.name=附魔金属镐
 item.enchant_src.name=附魔源矿
 item.babatip.oooop=能随机获得些奇怪的东西（确信
+item.copper_club.name=铜棒
+item.silver_club.name=银棒
+item.ring_killer_infinity.name=杀戮光环
+

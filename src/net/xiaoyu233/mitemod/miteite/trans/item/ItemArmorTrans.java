@@ -93,6 +93,9 @@ public abstract class ItemArmorTrans extends Item implements IDamageableItem, IU
          }
 
          total_defense = MathHelper.tryFitToNearestInteger(total_defense, 1.0E-4F);
+         if(owner instanceof EntityPlayer) {
+            total_defense += (float) ((EntityPlayer) owner).getGemSumNumeric(GemModifierTypes.protection);
+         }
          return total_defense;
       }
    }
@@ -223,7 +226,7 @@ public abstract class ItemArmorTrans extends Item implements IDamageableItem, IU
             if (this.effective_material != Materials.vibranium) {
                return 0;
             }
-            protection = 15;
+            protection = 11;
          }
       } else {
          protection = 8;

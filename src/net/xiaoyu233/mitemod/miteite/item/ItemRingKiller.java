@@ -5,7 +5,7 @@ import net.minecraft.*;
 import java.util.List;
 
 public class ItemRingKiller extends Item{
-    int level = 32767;
+    private int level;
     public ItemRingKiller(int par1, Material material) {
         super(par1, material, null);
         this.judgeMaterialLevel(material);
