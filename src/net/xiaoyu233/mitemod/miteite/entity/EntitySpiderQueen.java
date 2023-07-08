@@ -1,11 +1,7 @@
 package net.xiaoyu233.mitemod.miteite.entity;
 
 import net.minecraft.*;
-import net.minecraft.server.MinecraftServer;
-import net.xiaoyu233.mitemod.miteite.item.ItemMobVoucher;
 import net.xiaoyu233.mitemod.miteite.item.Items;
-
-import java.util.*;
 
 public class EntitySpiderQueen extends EntityArachnid {
     private final Item[] mobVouchers = new Item[]{Items.voucherExchanger, Items.voucherDoor, Items.voucherZombieLord, Items.voucherAnnihilationSkeleton, Items.voucherPigman, Items.voucherWitch

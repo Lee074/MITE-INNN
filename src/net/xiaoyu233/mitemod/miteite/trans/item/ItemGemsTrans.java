@@ -5,13 +5,9 @@ import net.minecraft.Item;
 import net.minecraft.ItemRock;
 import net.minecraft.ItemStack;
 import net.xiaoyu233.mitemod.miteite.item.Items;
-import net.xiaoyu233.mitemod.miteite.item.recipe.IFaultFeedback;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemRock.class)
 public class ItemGemsTrans extends Item {
