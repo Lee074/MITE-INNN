@@ -10,6 +10,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 import java.util.List;
 
+import static net.xiaoyu233.fml.util.ReflectHelper.createInstance;
+
 public class Items extends Item{
     public static final Item BLAZE_COAL_POWDER = new ItemBlazeCoalPowder(Constant.getNextItemID());
     public static final Item DIAMOND_CHUNK = createInstance(Item.class,new Class[]{int.class,Material.class,String.class},Constant.getNextItemID(),Material.diamond,"diamond_chunk").setCraftingDifficultyAsComponent(ItemRock.getCraftingDifficultyAsComponent(Material.diamond) /(float)4);
