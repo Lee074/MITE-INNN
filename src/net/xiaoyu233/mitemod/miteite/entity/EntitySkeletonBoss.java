@@ -14,8 +14,8 @@ public class EntitySkeletonBoss extends EntitySkeleton {
     private int spawnCounter;
     ItemStack stowed_item_stack;
     public Map<String, Float> attackDamageMap = new HashMap<>();
-    private Enchantment [] enhanceSpecialBookList = new Enchantment[] {Enchantment.protection, Enchantment.sharpness,  Enchantment.fortune, Enchantment.harvesting, Enchantments.EXTEND, Enchantment.efficiency, Enchantment.vampiric, Enchantment.butchering, Enchantment.featherFalling};
-    private Enchantment [] nonLevelsBookList = new Enchantment[] {Enchantments.enchantmentFixed, Enchantments.enchantmentChain, Enchantments.EMERGENCY};
+    private Enchantment[] enhanceSpecialBookList = new Enchantment[]{Enchantment.protection, Enchantment.sharpness, Enchantment.fortune, Enchantment.harvesting, Enchantments.EXTEND, Enchantment.efficiency, Enchantment.vampiric, Enchantment.butchering, Enchantment.featherFalling, Enchantment.smite, Enchantment.unbreaking, Enchantment.arrow_recovery, Enchantment.looting, Enchantment.knockback, Enchantment.aquaAffinity, Enchantment.flame, Enchantment.power, Enchantment.silkTouch, Enchantment.endurance, Enchantment.baneOfArthropods, Enchantment.regeneration, Enchantment.thorns, Enchantment.true_flight, Enchantment.speed, Enchantment.stun, Enchantment.fishing_fortune, Enchantment.fireProtection, Enchantment.blastProtection, Enchantment.projectileProtection, Enchantment.free_action, Enchantment.quickness, Enchantment.punch};
+    private Enchantment[] nonLevelsBookList = new Enchantment[]{Enchantments.enchantmentFixed, Enchantments.enchantmentChain, Enchantments.EMERGENCY, Enchantments.EnchantmentForge, Enchantments.enchantmentRangeAttack};
     private boolean attack_mode = true;
     public void addRandomWeapon() {
         List items = new ArrayList();
@@ -237,22 +237,37 @@ public class EntitySkeletonBoss extends EntitySkeleton {
         this.setHeldItemStack(item_stack);
     }
     protected void dropFewItems(boolean recently_hit_by_player, DamageSource damage_source) {
-        if (recently_hit_by_player){
+        if (recently_hit_by_player) {
+            Enchantment dropEnchantment;
             this.broadcastDamage("骷髅BOSS挑战成功");
-            this.dropItemStack(new ItemStack(Items.diamond, 10));
-            float percent = (float) nonLevelsBookList.length / ((float)enhanceSpecialBookList.length + (float)nonLevelsBookList.length);
-            if(rand.nextFloat() < percent && rand.nextInt(5) == 0) {
-                Enchantment dropEnchantment = nonLevelsBookList[rand.nextInt(nonLevelsBookList.length)];
-                ItemStack var11 = Item.enchantedBook.getEnchantedItemStack(new EnchantmentInstance(dropEnchantment, dropEnchantment.getNumLevelsForVibranium()));
-                this.dropItemStack(var11);
+            MinecraftServer server = MinecraftServer.F();
+            for (Object o : server.getConfigurationManager().playerEntityList) {
+                int nums;
+                EntityPlayer player = (EntityPlayer)o;
+                if (!this.attackDamageMap.containsKey(player.getEntityName()) || (nums = Math.round(this.attackDamageMap.get(player.getEntityName()).floatValue()) / 10) <= 0) continue;
+                player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Item.diamond, nums));
+            }
+
+            float percent = (float)this.nonLevelsBookList.length / ((float)this.enhanceSpecialBookList.length + (float)this.nonLevelsBookList.length);
+            if (this.rand.nextFloat() < percent && this.rand.nextInt(5) == 0) {
+                dropEnchantment = this.nonLevelsBookList[this.rand.nextInt(this.nonLevelsBookList.length)];
+                ItemStack stack = Item.enchantedBook.getEnchantedItemStack(new EnchantmentInstance(dropEnchantment, dropEnchantment.getNumLevelsForVibranium()));
+                if (this.rand.nextInt(2) == 0) {
+                    this.dropItemStack(stack);
+                }
                 return;
             }
-            Enchantment dropEnchantment = enhanceSpecialBookList[rand.nextInt(enhanceSpecialBookList.length)];
-            ItemStack var11 = Item.enchantedBook.getEnchantedItemStack(new EnchantmentInstance(dropEnchantment, dropEnchantment.getNumLevelsForVibranium()));
-            this.dropItemStack(var11);
+
+            dropEnchantment = this.enhanceSpecialBookList[this.rand.nextInt(this.enhanceSpecialBookList.length)];
+            ItemStack stack = Item.enchantedBook.getEnchantedItemStack(new EnchantmentInstance(dropEnchantment, dropEnchantment.getNumLevelsForVibranium()));
+            if (this.rand.nextInt(2) == 0) {
+                this.dropItemStack(stack);
+            }
+
             this.dropItemStack(new ItemStack(Items.voucherSkeletonBoss, 1));
         }
     }
+
     public int getExperienceValue() {
         return super.getExperienceValue() * 20;
     }

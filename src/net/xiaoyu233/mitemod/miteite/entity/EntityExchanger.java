@@ -18,6 +18,11 @@ public class EntityExchanger extends EntitySkeleton {
     }
 
     @Override
+    public boolean canNeverPickUpItem(Item item_on_ground) {
+        return true;
+    }
+
+    @Override
     protected void addRandomEquipment() {
         this.setCurrentItemOrArmor(0, (new ItemStack(Items.enderPearl, 1)).randomizeForMob(this, false));
     }

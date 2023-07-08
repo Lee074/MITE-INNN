@@ -93,7 +93,8 @@ public class Items extends Item{
     public static ItemEnhanceGem itemEnhanceGem5 = (ItemEnhanceGem)(new ItemEnhanceGem(Constant.getNextItemID(), 5)).setUnlocalizedName("enhance_gem_phase5");
     public static ItemEnhanceGem itemEnhanceGem6 = (ItemEnhanceGem)(new ItemEnhanceGem(Constant.getNextItemID(), 6)).setUnlocalizedName("enhance_gem_phase6");
     public static ItemEnhanceGemBox itemEnhanceGemBox = (ItemEnhanceGemBox)(new ItemEnhanceGemBox(Constant.getNextItemID())).setUnlocalizedName("enhance_gem_box_phase1");
-    public static ItemGemShard itemGemShard = (ItemGemShard)(new ItemGemShard(Constant.getNextItemID())).setUnlocalizedName("gem_shard");public static final Item fancyRed = (new ItemFancyRed(Constant.getNextItemID(), Material.diamond, "fancy_red"));
+    public static ItemGemShard itemGemShard = (ItemGemShard)(new ItemGemShard(Constant.getNextItemID())).setUnlocalizedName("gem_shard");
+    public static final Item fancyRed = (new ItemFancyRed(Constant.getNextItemID(), Material.diamond, "fancy_red"));
     public static final Item furnaceClay = new ItemFurnace(Block.furnaceClayIdle, Materials.clay);
     public static final Item furnaceClayBurning = new ItemFurnace(Block.furnaceClayBurning, Materials.clay);
     public static final Item furnaceCobblestone = new ItemFurnace(Block.furnaceIdle, Materials.stone);

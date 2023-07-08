@@ -136,8 +136,7 @@ public class PacketOpenWindowTrans {
          }  else if (this.inventoryType == 15) {
             TileEntityGemSetting var3x = (TileEntityGemSetting)tile_entity;
 
-            if (this.useProvidedWindowTitle)
-            {
+            if (this.useProvidedWindowTitle) {
                var3x.setCustomInvName(this.windowTitle);
             }
 
@@ -151,8 +150,7 @@ public class PacketOpenWindowTrans {
    }
 
    @Overwrite
-   public boolean hasCoords()
-   {
+   public boolean hasCoords() {
       return this.inventoryType == 0 || this.inventoryType == 1 || this.inventoryType == 2 || this.inventoryType == 3 || this.inventoryType == 4 || this.inventoryType == 5 || this.inventoryType == 7 || this.inventoryType == 8 || this.inventoryType == 9 || this.inventoryType == 10 || this.inventoryType == 15;
    }
 

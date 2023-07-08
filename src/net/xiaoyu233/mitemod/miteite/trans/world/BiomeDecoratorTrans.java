@@ -17,9 +17,7 @@ public class BiomeDecoratorTrans {
    private static final int COPPER_FREQUENCY_UNDERWORLD = Configs.wenscConfig.copperFrequencyUnderworld.ConfigValue;
    private static final int DIAMOND_FREQUENCY_OVERWORLD = Configs.wenscConfig.diamondFrequencyOverworld.ConfigValue;
    private static final int DIAMOND_FREQUENCY_UNDERWORLD = Configs.wenscConfig.diamondFrequencyUnderworld.ConfigValue;
-
    private static final int FANCY_RED_FREQUENCY_UNDERWORLD = Configs.wenscConfig.fancyRedFrequencyUnderworld.ConfigValue;
-
    private static final int GOLD_FREQUENCY_OVERWORLD = Configs.wenscConfig.goldFrequencyOverworld.ConfigValue;
    private static final int GOLD_FREQUENCY_UNDERWORLD = Configs.wenscConfig.goldFrequencyUnderworld.ConfigValue;
    private static final int IRON_FREQUENCY_OVERWORLD = Configs.wenscConfig.ironFrequencyOverworld.ConfigValue;
@@ -58,7 +56,6 @@ public class BiomeDecoratorTrans {
    protected World currentWorld;
    @Shadow
    protected WorldGenMinable diamondGen;
-
    protected WorldGenMinable fancyRedGen = new WorldGenMinable(Blocks.fancyRed.blockID, 3);
    @Shadow
    protected WorldGenMinable dirtGen;

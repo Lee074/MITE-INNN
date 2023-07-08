@@ -1,6 +1,7 @@
 package net.xiaoyu233.mitemod.miteite.trans.entity;
 
 import net.minecraft.*;
+import net.xiaoyu233.mitemod.miteite.entity.EntityExchanger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -34,13 +35,17 @@ public abstract class EntityItemTrans extends Entity {
    @Inject(method = "canBePickedUpBy",
            at = @At(value = "HEAD"),
            cancellable = true)
-   public void injectPlayerCannotPickup(EntityLiving entity_living_base,CallbackInfoReturnable<Boolean> callback){
+   public void injectPlayerCannotPickup(EntityLiving entity_living_base, CallbackInfoReturnable<Boolean> callback){
       if (entity_living_base instanceof EntityPlayer) {
          if (!this.canBePickUpByPlayer){
             callback.setReturnValue(false);
             callback.cancel();
          }
       }
+//      else if (entity_living_base instanceof EntityExchanger){
+//         callback.setReturnValue(false);
+//         callback.cancel();
+//      }
    }
 
    @Shadow

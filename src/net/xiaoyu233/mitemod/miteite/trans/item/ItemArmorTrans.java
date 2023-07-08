@@ -26,7 +26,6 @@ public abstract class ItemArmorTrans extends Item implements IDamageableItem, IU
    @Shadow
    @Final
    private boolean is_chain_mail;
-
    @Final
    private Function<Integer,Integer> expForLevel;
 

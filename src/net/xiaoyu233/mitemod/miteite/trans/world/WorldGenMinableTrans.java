@@ -68,8 +68,11 @@ public class WorldGenMinableTrans {
                return this.getMinVeinHeight(world) + rand.nextInt(this.getMaxVeinHeight(world) - this.getMinVeinHeight(world));
             }
 
+//            if (block instanceof BlockOre && rand.nextFloat() < 0.75F) {
+//               return this.getMinVeinHeight(world) + rand.nextInt(this.getMaxVeinHeight(world) - this.getMinVeinHeight(world));
+//            }
             if (block instanceof BlockOre && rand.nextFloat() < 0.75F) {
-               return this.getMinVeinHeight(world) + rand.nextInt(this.getMaxVeinHeight(world) - this.getMinVeinHeight(world));
+               return rand.nextInt(16 + world.underworld_y_offset);
             }
          }
 
@@ -125,7 +128,7 @@ public class WorldGenMinableTrans {
                do {
                   relative_height = rand.nextFloat();
                } while(relative_height >= rand.nextFloat());
-            }else {
+            } else {
                if (block != Block.oreLapis) {
                   Minecraft.setErrorMessage("WorldGenMinable: unknown ore id " + this.minableBlockId);
                   return -1;
@@ -144,10 +147,6 @@ public class WorldGenMinableTrans {
          return min_height + (int)(relative_height * (float)height_range);
       }
    }
-//   @Shadow
-//   public int getMinVeinHeight(World world) {
-//      return 0;
-//   };
 
    @Overwrite
    public int getMinVeinHeight(World world) {
