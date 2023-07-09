@@ -41,6 +41,7 @@ public enum ToolModifierTypes implements ItemModifierTypes{
     APOCALYPSE(1.0f,"天启",EnumChatFormat.DARK_RED,2,ToolModifierTypes::isWeapon, 4);
 
 //    BEHEADING_MODIFIER(0.02f, "斩首" , EnumChatFormats.DEAR_GREEN,1, ToolModifierTypes::isWeapon, 5);
+    // itemlevel addAttrA GEOLOGY
     public final String nbtName;
     public final float levelAddition;
     public final String displayName;

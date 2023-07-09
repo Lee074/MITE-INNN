@@ -53,8 +53,6 @@ public class Blocks extends Block{
     public static final Block blockStairsColorful14 = new BlockStairsColorful(190, blockColorful, 14);
     public static final Block blockStairsColorful15 = new BlockStairsColorful(191, blockColorful, 15);
     public static final BlockSpawn blockSpawn = (new BlockSpawn(192, Material.stone));
-    public static final Block vibraniumDoor = ReflectHelper.createInstance(BlockDoor.class, new Class[] {int.class,Material.class}
-            , 193, Materials.vibranium).setStepSound_(soundMetalFootstep);
 //    public static final Block volcanoStone = new BlockVolcanoStone(194);
 //    public static final BlockSand volcanoSand = (BlockSand) new BlockSand(195).setBlockHardness(0.4F);
 //    public static final Block volcanoCobblestone = ReflectHelper.createInstance(Block.class, new Class[]{int.class, Material.class, BlockConstants.class}, 196, Materials.stone, new BlockConstants())
@@ -65,8 +63,10 @@ public class Blocks extends Block{
 //    public static final Block volcanoMithrilOre = new BlockOre(190, Material.mithril, 3).setBlockHardness(4.0F);
 //    public static final Block volcanoDiamondOre = new BlockOre(191, Material.diamond, 3).setBlockHardness(4.0F);
 
-    public static final Block fancyRed = (new BlockFancyRed(194, Material.diamond, 4)).setCreativeTab(CreativeModeTab.tabBlock);
-    public static final Block gemSetting = (new BlockGemSetting(195, Material.stone, (new BlockConstants()).setNeverHidesAdjacentFaces())).setUnlocalizedName("gem_setting").setCreativeTab(CreativeModeTab.tabDecorations);
+    public static final Block fancyRed = (new BlockFancyRed(193, Material.diamond, 4)).setCreativeTab(CreativeModeTab.tabBlock);
+    public static final Block gemSetting = (new BlockGemSetting(194, Material.stone, (new BlockConstants()).setNeverHidesAdjacentFaces())).setUnlocalizedName("gem_setting").setCreativeTab(CreativeModeTab.tabDecorations);
+    public static final Block vibraniumDoor = ReflectHelper.createInstance(BlockDoor.class, new Class[] {int.class,Material.class}
+            , 195, Materials.vibranium).setStepSound_(soundMetalFootstep);
 
 
 

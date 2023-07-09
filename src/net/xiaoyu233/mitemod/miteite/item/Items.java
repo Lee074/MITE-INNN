@@ -60,27 +60,6 @@ public class Items extends Item{
     public static final Item voucherClubCore = new ItemMobVoucher(Constant.getNextItemID(), "club_core");
     //public static final Item itemDynamicCore = new ItemDynamicCore(Constant.getNextItemID(), Materials.redstone).setUnlocalizedName("dynamic_core");
     public static final Item voucherZombieBoss = new ItemMobVoucher(Constant.getNextItemID(), "zmobieboss");;
-    public static final Item voucherGhast = new ItemMobVoucher(Constant.getNextItemID(), "ghast");
-    public static final Item voucherBedrock = new ItemMobVoucher(Constant.getNextItemID(), "bedrock");
-    public static final Item voucherVibraniumDoor = new ItemMobVoucher(Constant.getNextItemID(), "vibraniumdoor");
-    public static final Item voucherGoldBodyCore = new ItemMobVoucher(Constant.getNextItemID(), "goldbody_core");
-    public static final Item voucherSkeletonBoss = new ItemMobVoucher(Constant.getNextItemID(), "skeletonboss");
-    public static final Item voucherUltimateAnnihilation = new ItemMobVoucher(Constant.getNextItemID(), "UltimateAnnihilation");
-    public static final Item endBook = new ItemEndBook(Constant.getNextItemID());
-    public static final ItemInfinitySword infinitySword = new ItemInfinitySword(Constant.getNextItemID());
-    public static final Item infinityingot = ReflectHelper.createInstance(ItemIngot.class, new Class[]{Integer.TYPE, Material.class}, Constant.getNextItemID(), Materials.infinity);
-    public static final ItemCoin coinVibranium = ReflectHelper.createInstance(ItemCoin.class, new Class[]{Integer.TYPE, Material.class}, Constant.getNextItemID(), Materials.vibranium);
-    public static final Item doorVibranium = new ItemDoor(Constant.getNextItemID(), Materials.vibranium);
-    public static final Item fishRodVibranium = new ItemFishingRod(Constant.getNextItemID(), Materials.vibranium);
-    public static final ItemArmor unassailableChestPlate = new ItemCuirass(Constant.getNextItemID(), Materials.infinity, false);
-    public static final Item clubCopper = new ItemClubMetal(Constant.getNextItemID(), Material.copper);
-    public static final Item clubSilver = new ItemClubMetal(Constant.getNextItemID(),Material.silver);
-    public static final Item enchantIngot = createInstance(ItemIngot.class, new Class[]{Integer.TYPE, Material.class}, Constant.getNextItemID(), Materials.enchant);
-    public static final ItemNugget enchantNugget = createInstance(ItemNugget.class, new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.enchant);
-    public static final ItemPickaxe enchantPickaxe = createInstance(ItemPickaxe.class,new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.enchant);
-    public static final ItemSword enchantSword = createInstance(ItemSword.class,new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.enchant);
-    public static final Item enchantStick = createInstance(Item.class,new Class[]{int.class,Material.class,String.class},Constant.getNextItemID(), Materials.enchant, "enchant_stick");
-    public static final Item enchantSRC = createInstance(Item.class,new Class[]{int.class,Material.class,String.class},Constant.getNextItemID(), Materials.enchant, "enchant_src").setXPReward(80);
     public static final Item itemDynamicCoreIron = new ItemDynamicCore(Constant.getNextItemID(), Materials.iron, 1).setUnlocalizedName("dynamic_core_iron");
     public static final Item itemDynamicCoreAncient_metal = new ItemDynamicCore(Constant.getNextItemID(), Materials.ancient_metal, 2).setUnlocalizedName("dynamic_core_ancient_metal");
     public static final Item itemDynamicCoreMithril = new ItemDynamicCore(Constant.getNextItemID(), Materials.mithril, 3).setUnlocalizedName("dynamic_core_mithril");
@@ -110,6 +89,27 @@ public class Items extends Item{
     public static final Item furnaceVibranium = new ItemFurnace(Blocks.furnaceVibraniumIdle, Materials.vibranium);
     public static final Item furnaceVibraniumBurning = new ItemFurnace(Blocks.furnaceVibraniumBurning, Materials.vibranium);
 
+    public static final Item voucherGhast = new ItemMobVoucher(Constant.getNextItemID(), "ghast");
+    public static final Item voucherBedrock = new ItemMobVoucher(Constant.getNextItemID(), "bedrock");
+    public static final Item voucherVibraniumDoor = new ItemMobVoucher(Constant.getNextItemID(), "vibraniumdoor");
+    public static final Item voucherGoldBodyCore = new ItemMobVoucher(Constant.getNextItemID(), "goldbody_core");
+    public static final Item voucherSkeletonBoss = new ItemMobVoucher(Constant.getNextItemID(), "skeletonboss");
+    public static final Item voucherUltimateAnnihilation = new ItemMobVoucher(Constant.getNextItemID(), "UltimateAnnihilation");
+    public static final Item endBook = new ItemEndBook(Constant.getNextItemID());
+    public static final ItemInfinitySword infinitySword = new ItemInfinitySword(Constant.getNextItemID());
+    public static final Item infinityingot = ReflectHelper.createInstance(ItemIngot.class, new Class[]{Integer.TYPE, Material.class}, Constant.getNextItemID(), Materials.infinity);
+    public static final ItemCoin coinVibranium = ReflectHelper.createInstance(ItemCoin.class, new Class[]{Integer.TYPE, Material.class}, Constant.getNextItemID(), Materials.vibranium);
+    public static final Item doorVibranium = new ItemDoor(Constant.getNextItemID(), Materials.vibranium);
+    public static final Item fishRodVibranium = new ItemFishingRod(Constant.getNextItemID(), Materials.vibranium);
+    public static final ItemArmor unassailableChestPlate = new ItemCuirass(Constant.getNextItemID(), Materials.infinity, false);
+    public static final Item clubCopper = new ItemClubMetal(Constant.getNextItemID(), Material.copper);
+    public static final Item clubSilver = new ItemClubMetal(Constant.getNextItemID(),Material.silver);
+    public static final Item enchantIngot = createInstance(ItemIngot.class, new Class[]{Integer.TYPE, Material.class}, Constant.getNextItemID(), Materials.enchant);
+    public static final ItemNugget enchantNugget = createInstance(ItemNugget.class, new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.enchant);
+    public static final ItemPickaxe enchantPickaxe = createInstance(ItemPickaxe.class,new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.enchant);
+    public static final ItemSword enchantSword = createInstance(ItemSword.class,new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.enchant);
+    public static final Item enchantStick = createInstance(Item.class,new Class[]{int.class,Material.class,String.class},Constant.getNextItemID(), Materials.enchant, "enchant_stick");
+    public static final Item enchantSRC = createInstance(Item.class,new Class[]{int.class,Material.class,String.class},Constant.getNextItemID(), Materials.enchant, "enchant_src").setXPReward(80);
 
     private static Item register(String resourceLocation, Item item, CreativeModeTab tab) {
         item.setResourceLocation(item.getResourceLocationPrefix() + resourceLocation);

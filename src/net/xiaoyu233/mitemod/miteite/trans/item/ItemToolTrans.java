@@ -268,7 +268,8 @@ public class ItemToolTrans extends Item implements IUpgradableItem {
 
       Block block = info.block;
       ItemStack item_stack = info.getHarvesterItemStack();
-      if (!(block instanceof BlockOre && info.getMetadata() == 1) && block != Block.oreDiamond && block != Block.oreCoal && block != Block.oreEmerald && block != Block.oreRedstone && block != Block.oreLapis && block != Block.oreNetherQuartz){
+      if (!(block instanceof BlockOre && info.getMetadata() == 1) && block != Block.oreDiamond && block != Block.oreCoal && block != Block.oreEmerald && block != Block.oreRedstone && block != Block.oreLapis && block != Block.oreNetherQuartz
+      && block != new ItemStack(Block.oreGold, 1, 2).getItemAsBlock().getBlock()){
          float expReward = ToolModifierTypes.GEOLOGY.getModifierValue(info.getHarvesterItemStack().getTagCompound());
          if (expReward != 0){
             ItemStack dropItemStack = new ItemStack(info.block);
