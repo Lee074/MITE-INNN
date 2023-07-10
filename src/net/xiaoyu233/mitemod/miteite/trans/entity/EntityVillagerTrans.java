@@ -47,6 +47,16 @@ public abstract class EntityVillagerTrans extends EntityAgeable implements IMerc
       super(par1World);
    }
 
+   @Overwrite
+   public EntityVillager func_90012_b(EntityAgeable par1EntityAgeable) {
+      EntityVillager var2 = new EntityVillager(this.worldObj);
+      var2.onSpawnWithEgg((GroupDataEntity)null);
+      if(this.rand.nextInt(9) == 0){
+         var2.dropItemStack(new ItemStack(Items.voucherVillager));
+      }
+      return var2;
+   }
+
    @Inject(method = "<init>(Lnet/minecraft/World;I)V", at = @At("TAIL"))
    public void injectInitEnhanceBookList(CallbackInfo callbackInfo) {
       this.initEnhanceBookList();
@@ -70,12 +80,6 @@ public abstract class EntityVillagerTrans extends EntityAgeable implements IMerc
          par0MerchantRecipeList.add(new MerchantRecipe(new ItemStack(par1, Configs.wenscConfig.villagerWoolToEmeraldShardCount.ConfigValue), new ItemStack(Item.shardEmerald, Configs.wenscConfig.villagerWoolToEmeraldShardShardCount.ConfigValue)));
       }
    }
-
-   @Shadow
-   public EntityVillager func_90012_b(EntityAgeable par1EntityAgeable) {
-      return null;
-   }
-
 
    @Shadow
    private static ItemStack getRandomSizedStack(int par0, Random par1Random) {

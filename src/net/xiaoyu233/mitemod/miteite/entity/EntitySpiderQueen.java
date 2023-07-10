@@ -19,7 +19,6 @@ public class EntitySpiderQueen extends EntityArachnid {
             int day = this.getWorld() != null ? this.getWorld().getDayOfOverworld() : 0;
             int nums = 1 + day / 48;
             this.dropItemStack(new ItemStack(Items.fancyRed, nums));
-
             this.dropItemStack(new ItemStack(this.mobVouchers[this.rand.nextInt(mobVouchers.length)]));
         }
     }
