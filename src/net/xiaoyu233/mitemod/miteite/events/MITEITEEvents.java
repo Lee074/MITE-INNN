@@ -135,11 +135,10 @@ public class MITEITEEvents {
 //            }
 
 //            if (par2Str.startsWith("testm")) {
-//                for (Item item : Item.itemsList) {
-//                    if(item.getSoldPrice() != 0){
-//                        commandListener.sendChatToPlayer(ChatMessage.createFromText(item.getUnlocalizedName()+ item.getSoldPrice()));
-//                    }
+//                if(player.getHeldItemStack().getItem().getMaterial() == new ItemStack(Block.oreGold, 1, 1)){
+//                    commandListener.sendChatToPlayer(ChatMessage.createFromText(new ItemStack(Block.oreGold, 1, 2).getMITEStyleDisplayName()));
 //                }
+//
 //                event.setExecuteSuccess(true);
 //            }
 

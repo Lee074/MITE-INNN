@@ -245,7 +245,7 @@ public class EntitySkeletonBoss extends EntitySkeleton {
                 int nums;
                 EntityPlayer player = (EntityPlayer)o;
                 if (!this.attackDamageMap.containsKey(player.getEntityName()) || (nums = Math.round(this.attackDamageMap.get(player.getEntityName()).floatValue()) / 10) <= 0) continue;
-                player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Item.diamond, nums));
+                this.dropItemStack(new ItemStack(Item.diamond, nums));
             }
 
             float percent = (float)this.nonLevelsBookList.length / ((float)this.enhanceSpecialBookList.length + (float)this.nonLevelsBookList.length);

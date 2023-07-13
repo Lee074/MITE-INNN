@@ -68,12 +68,12 @@ public class WorldGenMinableTrans {
                return this.getMinVeinHeight(world) + rand.nextInt(this.getMaxVeinHeight(world) - this.getMinVeinHeight(world));
             }
 
-//            if (block instanceof BlockOre && rand.nextFloat() < 0.75F) {
-//               return this.getMinVeinHeight(world) + rand.nextInt(this.getMaxVeinHeight(world) - this.getMinVeinHeight(world));
-//            }
             if (block instanceof BlockOre && rand.nextFloat() < 0.75F) {
-               return rand.nextInt(16 + world.underworld_y_offset);
+               return this.getMinVeinHeight(world) + rand.nextInt(this.getMaxVeinHeight(world) - this.getMinVeinHeight(world));
             }
+//            if (block instanceof BlockOre && rand.nextFloat() < 0.75F) {
+//               return rand.nextInt(16 + world.underworld_y_offset);
+//            }
          }
 
          return rand.nextInt(256);

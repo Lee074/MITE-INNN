@@ -43,8 +43,7 @@ public class EntityZombieBoss extends EntityZombie {
                 int nums;
                 EntityPlayer player = (EntityPlayer)o;
                 if (!this.attackDamageMap.containsKey(player.getEntityName()) || (nums = Math.round(this.attackDamageMap.get(player.getEntityName()).floatValue()) / 10) <= 0) continue;
-                player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Item.diamond, nums));
-                player.inventory.addItemStackToInventoryOrDropIt(new ItemStack(Items.voucherZombieBoss, 1));
+                this.dropItemStack(new ItemStack(Item.diamond, nums));
             }
 
             float percent = (float)this.nonLevelsBookList.length / ((float)this.enhanceSpecialBookList.length + (float)this.nonLevelsBookList.length);
@@ -62,6 +61,8 @@ public class EntityZombieBoss extends EntityZombie {
                 this.dropItemStack(stack);
             }
         }
+
+        this.dropItemStack(new ItemStack(Items.voucherZombieBoss, 1));
     }
 
     protected void applyEntityAttributes() {

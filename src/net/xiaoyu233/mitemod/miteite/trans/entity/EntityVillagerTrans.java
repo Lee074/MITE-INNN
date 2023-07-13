@@ -47,14 +47,17 @@ public abstract class EntityVillagerTrans extends EntityAgeable implements IMerc
       super(par1World);
    }
 
-   @Overwrite
+   @Shadow
    public EntityVillager func_90012_b(EntityAgeable par1EntityAgeable) {
-      EntityVillager var2 = new EntityVillager(this.worldObj);
-      var2.onSpawnWithEgg((GroupDataEntity)null);
-      if(this.rand.nextInt(9) == 0){
-         var2.dropItemStack(new ItemStack(Items.voucherVillager));
+      return null;
+   }
+
+   @Overwrite
+   public EntityAgeable createChild(EntityAgeable par1EntityAgeable) {
+      if(this.rand.nextInt(4) == 0){
+         this.dropItemStack(new ItemStack(Items.voucherVillager));
       }
-      return var2;
+      return this.func_90012_b(par1EntityAgeable);
    }
 
    @Inject(method = "<init>(Lnet/minecraft/World;I)V", at = @At("TAIL"))
