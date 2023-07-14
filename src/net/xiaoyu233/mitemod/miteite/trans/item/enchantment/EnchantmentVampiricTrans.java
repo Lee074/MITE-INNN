@@ -12,12 +12,11 @@ public class EnchantmentVampiricTrans {
         if (item instanceof ItemTool) {
             Material material = ((ItemTool)item).getToolMaterial();
             if (material == Materials.vibranium || material == Materials.enchant || material == Materials.infinity) {
-                return true;
+                return item instanceof ItemSword || item instanceof ItemScythe || item instanceof ItemCudgel;
             } else {
                 return false;
             }
         }
-
-        return item instanceof ItemSword || item instanceof ItemScythe || item instanceof ItemCudgel;
+        return false;
     }
 }
