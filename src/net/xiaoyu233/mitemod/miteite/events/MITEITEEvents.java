@@ -133,12 +133,14 @@ public class MITEITEEvents {
 //
 //                event.setExecuteSuccess(true);
 //            }
-
-//            if (par2Str.startsWith("testm")) {
-//                if(player.getHeldItemStack().getItem().getMaterial() == new ItemStack(Block.oreGold, 1, 1)){
-//                    commandListener.sendChatToPlayer(ChatMessage.createFromText(new ItemStack(Block.oreGold, 1, 2).getMITEStyleDisplayName()));
-//                }
 //
+//            if (par2Str.startsWith("testm")) {
+//                EntityVillager entityVillager = new EntityVillager(world, 2);
+//                if (entityVillager != null) {
+//                    commandListener.sendChatToPlayer(ChatMessage.createFromText("已生成实体 ").setColor(EnumChatFormat.LIGHT_GRAY));
+//                    PathfinderGoalMakeLove pathfinderGoalMakeLove = new PathfinderGoalMakeLove(entityVillager);
+//                    pathfinderGoalMakeLove.test((int)player.posX, (int)player.posY, (int)player.posZ);
+//                }
 //                event.setExecuteSuccess(true);
 //            }
 

@@ -52,13 +52,13 @@ public abstract class EntityVillagerTrans extends EntityAgeable implements IMerc
       return null;
    }
 
-   @Overwrite
-   public EntityAgeable createChild(EntityAgeable par1EntityAgeable) {
-      if(this.rand.nextInt(4) == 0){
-         this.dropItemStack(new ItemStack(Items.voucherVillager));
-      }
-      return this.func_90012_b(par1EntityAgeable);
-   }
+//   @Overwrite
+//   public EntityAgeable createChild(EntityAgeable par1EntityAgeable) {
+//      if(this.rand.nextInt(4) == 0){
+//         this.dropItemStack(new ItemStack(Items.voucherVillager));
+//      }
+//      return this.func_90012_b(par1EntityAgeable);
+//   }
 
    @Inject(method = "<init>(Lnet/minecraft/World;I)V", at = @At("TAIL"))
    public void injectInitEnhanceBookList(CallbackInfo callbackInfo) {
